@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To do List</title>
+  </head>
+  <body>
+    <h1>To do List</h1>
+    <div class="content">
+      <div class="content--add-item">
+        <input type="text" id="input-new-task" placeholder="Digita algo ai" />
+        <button
+          onclick="newTask()"
+          id="btn-new-task"
+          title="Click para adicionar uma nova tarefa"
+        >
+          +
+        </button>
+      </div>
+      <div class="content--body">
+        <ul id="to-do-list"></ul>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
