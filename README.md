@@ -2,6 +2,13 @@
 
 Este é um projeto simples que permite você fazer as suas lista de tarefas e ficar salvo no navegador.
 
+## Como Utilizar
+
+- Acesse o site:
+  ```bash
+  https://julianoaureliano.github.io/to-do-list-javascript/
+  ```
+
 ## Funcionalidades
 
 - Criação de tarefas.
