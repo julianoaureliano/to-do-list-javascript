@@ -33,9 +33,23 @@ function showValues() {
   let list = document.getElementById("to-do-list");
 
   list.innerHTML = "";
-  for (let i = 0; i < values.length; i++) {
-    list.innerHTML += `<li>${values[i]["name"]} <button id="btn-ok" onclick="removeItem('${values[i]["name"]}')">ok</button></li>`;
-  }
+
+  //mudei innerHTML por createElement para evitar problemas
+  values.forEach((task) => {
+    let listItem = document.createElement("li");
+    listItem.innerText = task.name;
+
+    let removeButton = document.createElement("button");
+    removeButton.innerHTML = "ok";
+    removeButton.id = "btn-ok";
+
+    removeButton.onclick = () => {
+      removeItem(task.name);
+    };
+
+    listItem.appendChild(removeButton);
+    list.appendChild(listItem);
+  });
 }
 
 function removeItem(data) {
