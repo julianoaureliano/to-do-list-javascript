@@ -1,5 +1,14 @@
 const localStorageKey = "to-do-list-gn";
 
+// permite a interaçao com a tecla Enter
+document
+  .getElementById("input-new-task")
+  .addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      newTask();
+    }
+  });
+
 function validadeIfExistsNewTask() {
   let values = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
   let inputValue = document.getElementById("input-new-task").value;
@@ -11,7 +20,7 @@ function newTask() {
   let input = document.getElementById("input-new-task");
   input.style.border = "";
   //validação
-  if (!input.value) {
+  if (!input.value.trim()) {
     input.style.border = "1px solid red";
     alert("Nao tem nada");
   } else if (validadeIfExistsNewTask()) {
